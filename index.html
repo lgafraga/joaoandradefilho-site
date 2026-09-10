@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>João Andrade Filho — Sertanejo & Forró</title>
+<meta name="description" content="João Andrade Filho — músicas autorais de sertanejo e forró. Ouça Feiticeira, Sabiá, Clarinha e outras composições sobre amor, saudade e a vida no interior.">
+<meta property="og:title" content="João Andrade Filho — Sertanejo & Forró">
+<meta property="og:description" content="Músicas autorais de sertanejo e forró — amor, saudade e vida no interior.">
+<meta property="og:image" content="https://joaoandradefilho.com.br/capas/01-feiticeira.jpg">
+<meta property="og:type" content="music.musician">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f0c09;
+    --bg-card:#1a1510;
+    --bg-card-hover:#211a13;
+    --gold:#d9a441;
+    --gold-bright:#f0c674;
+    --cream:#f2e9d8;
+    --muted:#a89a83;
+    --line:#332a1f;
+    --sertanejo:#c97a4a;
+    --forro:#4a8f6b;
+    --raiz:#b0863f;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.5;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  a{color:var(--gold-bright)}
+  img{max-width:100%;display:block}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:6rem 1.5rem 4rem;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 20%, rgba(217,164,65,.14), transparent 70%),
+      linear-gradient(180deg, #0f0c09 0%, #0f0c09 60%, #150f0a 100%);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url('capas/10-sabia.jpg');
+    background-size:cover;
+    background-position:center 30%;
+    opacity:.22;
+    filter:saturate(.9) brightness(.9);
+    mask-image:linear-gradient(180deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,.5) 55%, transparent 100%);
+    -webkit-mask-image:linear-gradient(180deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,.5) 55%, transparent 100%);
+  }
+  .hero-content{position:relative; z-index:1; max-width:720px}
+  .kicker{
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.72rem;
+    color:var(--gold);
+    margin-bottom:1.1rem;
+    font-weight:600;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem,6vw,4.2rem);
+    margin:0 0 1rem;
+    color:var(--cream);
+  }
+  .hero p.tagline{
+    color:var(--muted);
+    font-size:1.08rem;
+    max-width:520px;
+    margin:0 auto 1.8rem;
+  }
+  .genre-pills{display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.2rem}
+  .pill{
+    font-size:.76rem;
+    padding:.35rem .85rem;
+    border-radius:999px;
+    border:1px solid var(--line);
+    color:var(--muted);
+    background:rgba(255,255,255,.02);
+  }
+  .hero-links{display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center}
+  .btn{
+    display:inline-flex; align-items:center; gap:.5rem;
+    padding:.7rem 1.4rem;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:.92rem;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn-primary{background:var(--gold); color:#1a1208}
+  .btn-primary:hover{background:var(--gold-bright); transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--line); color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold-bright)}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{max-width:960px; margin:0 auto; padding:4rem 1.5rem}
+  .section-head{text-align:center; margin-bottom:2.75rem}
+  .section-head h2{font-size:clamp(1.6rem,3.5vw,2.2rem); margin:0 0 .5rem}
+  .section-head p{color:var(--muted); margin:0; font-size:.98rem}
+
+  /* ---------- SONG GRID ---------- */
+  .song-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:1.5rem;
+  }
+  .song-card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .song-card:hover{border-color:#4a3d2a; background:var(--bg-card-hover)}
+  .song-cover{
+    position:relative;
+    aspect-ratio:1/1;
+    overflow:hidden;
+  }
+  .song-cover img{width:100%; height:100%; object-fit:cover}
+  .song-tag{
+    position:absolute; top:.7rem; left:.7rem;
+    font-size:.68rem; font-weight:600; letter-spacing:.04em;
+    padding:.3rem .65rem; border-radius:999px;
+    color:#fff; text-transform:uppercase;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(4px);
+    border:1px solid rgba(255,255,255,.15);
+  }
+  .tag-sertanejo{border-left:3px solid var(--sertanejo)}
+  .tag-forro{border-left:3px solid var(--forro)}
+  .tag-raiz{border-left:3px solid var(--raiz)}
+
+  .song-body{padding:1.1rem 1.2rem 1.3rem}
+  .song-title{font-size:1.2rem; margin:0 0 .2rem; color:var(--cream)}
+  .song-style{font-size:.8rem; color:var(--muted); margin:0 0 .9rem}
+
+  .player-wrap{
+    margin:0 0 .9rem;
+    border-radius:10px;
+    overflow:hidden;
+    background:#000;
+    border:1px solid var(--line);
+  }
+  .player-wrap iframe{width:100%; height:150px; display:block; border:0}
+
+  details.lyrics{font-size:.88rem}
+  details.lyrics summary{
+    cursor:pointer;
+    color:var(--gold-bright);
+    font-weight:600;
+    list-style:none;
+    display:flex; align-items:center; gap:.4rem;
+    padding:.3rem 0;
+  }
+  details.lyrics summary::-webkit-details-marker{display:none}
+  details.lyrics summary::before{
+    content:"▸";
+    display:inline-block;
+    transition:transform .15s ease;
+    font-size:.75em;
+  }
+  details.lyrics[open] summary::before{transform:rotate(90deg)}
+  details.lyrics .lyrics-text{
+    white-space:pre-line;
+    color:var(--muted);
+    line-height:1.65;
+    margin-top:.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--line);
+  }
+
+  /* ---------- SOBRE ---------- */
+  .sobre{
+    background:linear-gradient(180deg, transparent, rgba(217,164,65,.05));
+  }
+  .sobre-box{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:2.2rem;
+    text-align:center;
+  }
+  .sobre-box p{color:var(--muted); max-width:600px; margin:0 auto; font-size:1rem}
+
+  footer{
+    text-align:center;
+    padding:3rem 1.5rem 2.5rem;
+    color:var(--muted);
+    font-size:.85rem;
+    border-top:1px solid var(--line);
+  }
+  footer a{color:var(--muted); text-decoration:underline}
+  footer a:hover{color:var(--gold-bright)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="kicker">Sertanejo &amp; Forró</div>
+    <h1>João Andrade Filho</h1>
+    <p class="tagline">Composições autorais sobre amor, saudade e a vida no interior — do xote de arraiá ao modão de viola.</p>
+    <div class="genre-pills">
+      <span class="pill">Sertanejo</span>
+      <span class="pill">Forró</span>
+      <span class="pill">Sertanejo Raiz</span>
+    </div>
+    <div class="hero-links">
+      <a class="btn btn-primary" href="#musicas">Ouvir as músicas</a>
+      <a class="btn btn-ghost" href="https://suno.com/@joaoandradeshangrila" target="_blank" rel="noopener">Perfil no Suno</a>
+      <a class="btn btn-ghost" href="https://open.spotify.com/intl-pt/artist/2uTUBUVhU0ffDsDrmTxuiB" target="_blank" rel="noopener">Spotify</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="musicas">
+    <div class="section-head">
+      <h2>Músicas</h2>
+      <p>Dez composições, gravadas e cantadas na voz do próprio autor.</p>
+    </div>
+
+    <div class="song-grid">
+
+      <article class="song-card" id="feiticeira">
+        <div class="song-cover">
+          <img src="capas/01-feiticeira.jpg" alt="Capa de Feiticeira" loading="lazy">
+          <span class="song-tag tag-sertanejo">Sertanejo</span>
+        </div>
+        <div class="song-body">
+          <h3 class="song-title">Feiticeira</h3>
+          <p class="song-style">sertanejo, voz masculina</p>
+          <div class="player-wrap">
+            <iframe src="https://suno.com/embed/9a2dd2ae-bf59-4e67-a14e-2407275cdb09" loading="lazy" allow="autoplay"></iframe>
+          </div>
+          <details class="lyrics">
+            <summary>Ver letra</summary>
+            <div class="lyrics-text">Eu andava de uma farra para outra
+Nunca fui homem de uma mulher só
+Mas de repente me fizeram um feitiço
+Eu fiquei apaixonado, a mulher me deu um nó
+
+É feiticeira, é feiticeira
+A danada da mulher me tirou da bagaceira
+É feiticeira, é feiticeira
+A danada da mulher me tirou da bagaceira
+
+Hoje eu entendo o que está acontecendo
+Mas não quero quebrar o feitiço não
+O engraçado é que a tal da feiticeira vacilou
+Me deu um mole, eu lacei seu coração
+
+É feiticeira, é feiticeira
+A danada da mulher me tirou da bagaceira
+É feiticeira, é feiticeira
+A danada da mulher me tirou da bagaceira
+
+É feiticeira...
+Me tirou da bagaceira</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="song-card" id="fantasia">
+        <div class="song-cover">
+          <img src="capas/02-fantasia.jpg" alt="Capa de Fantasia" loading="lazy">
+          <span class="song-tag tag-sertanejo">Sertanejo</span>
+        </div>
+        <div class="song-body">
+          <h3 class="song-title">Fantasia</h3>
+          <p class="song-style">sertanejo, voz masculina</p>
+          <div class="player-wrap">
+            <iframe src="https://suno.com/embed/86ddc102-271f-4aa4-81a3-5f5f7a3475f2" loading="lazy" allow="autoplay"></iframe>
+          </div>
+          <details class="lyrics">
+            <summary>Ver letra</summary>
+            <div class="lyrics-text">Eu quero te ter mais uma noite
+Alguém sussurrou o seu nome
+Eu quero você nas minhas fantasias
+Na noite passada você dizia
+
+I love you, vem, nego
+Você foi feito pra mim
+I love you, vem, nego
+Você foi feito pra mim
+I love you
+
+Eu quero te ter mais uma noite
+Alguém sussurrou o seu nome
+Eu quero você nas minhas fantasias
+Na noite passada você dizia
+
+I love you, vem, nego
+Você foi feito pra mim
+I love you, vem, nego
+Você foi feito pra mim
+
+I love you...</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="song-card" id="minha-querida">
+        <div class="song-cover">
+          <img src="capas/03-minha-querida.jpg" alt="Capa de Minha Querida" loading="lazy">
+          <span class="song-tag tag-sertanejo">Sertanejo</span>
+        </div>
+        <div class="song-body">
+          <h3 class="song-title">Minha Querida</h3>
+          <p class="song-style">sertanejo, voz masculina</p>
+          <div class="player-wrap">
+            <iframe src="https://suno.com/embed/9d1a2664-b58d-4c29-b851-dad8e2028005" loading="lazy" allow="autoplay"></iframe>
+          </div>
+          <details class="lyrics">
+            <summary>Ver letra</summary>
+            <div class="lyrics-text">Minha querida, você me pergunta e eu me calo
+Mas quando eu bebo me declaro
+Falo para todo o mundo ouvir
+
+Ela me deixou, me chamava de minha vida
+Hoje bebo e choro
+Com a saudade até da despedida
+E não vai mais voltar, o tempo já passou
+Tomar mais uma para lhe chamar de amor
+
+Minha querida, você me pergunta e eu me calo
+Mas quando eu bebo me declaro
+Falo para todo o mundo ouvir
+
+Ela me deixou, me chamava de minha vida
+Hoje bebo e choro
+Com a saudade até da despedida
+E não vai mais voltar, o tempo já passou
+Tomar mais uma para lhe chamar de amor
+
+Tomar mais uma para lhe chamar de amor
+Tomar mais uma para lhe chamar de amor</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="song-card" id="esse-forro-ta-bom">
+        <div class="song-cover">
+          <img src="capas/04-esse-forro-ta-bom.jpg" alt="Capa de Esse Forró Tá Bom" loading="lazy">
+          <span class="song-tag tag-forro">Forró</span>
+        </div>
+        <div class="song-body">
+          <h3 class="song-title">Esse Forró Tá Bom</h3>
+          <p class="song-style">forró, voz masculina</p>
+          <div class="player-wrap">
+            <iframe src="https://suno.com/embed/6f941a9e-ddae-495a-8e7d-77cf9993c3fa" loading="lazy" allow="autoplay"></iframe>
+          </div>
+          <details class="lyrics">
+            <summary>Ver letra</summary>
+            <div class="lyrics-text">Veio ficar comigo, amor
+Me deu um beijo na boca
+Veio ficar comigo, amor
+Serei o seu cobertor
+
+Você é minha pimenta e eu sou o seu dendê
+Você mata minha vontade
+E eu te mato de prazer
+
+Ê ê ê, ê ê ê
+Esse forró tá bom, esse forró tá bom
+Ê ê ê, ê ê ê
+Esse forró tá bom, esse forró tá bom
+
+Veio ficar comigo, amor
+Me deu um beijo na boca
+Veio ficar comigo, amor
+Serei o seu cobertor
+Você é minha pimenta e eu sou o seu dendê
+Você mata minha vontade
+E eu te mato de prazer
+
+Ê ê ê, ê ê ê
+Esse forró tá bom, esse forró tá bom
+Ê ê ê, ê ê ê
+Esse forró tá bom, esse forró tá bom
+
+Esse forró tá bom, esse forró tá bom</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="song-card" id="insensatez">
+        <div class="song-cover">
+          <img src="capas/05-insensatez.jpg" alt="Capa de Insensatez" loading="lazy">
+          <span class="song-tag tag-sertanejo">Sertanejo</span>
+        </div>
+        <div class="song-body">
+          <h3 class="song-title">Insensatez</h3>
+          <p class="song-style">sertanejo, voz masculina</p>
+          <div class="player-wrap">
+            <iframe src="https://suno.com/embed/42ddecbc-a8d2-46f4-8c7b-b39e40105560" loading="lazy" allow="autoplay"></iframe>
+          </div>
+          <details class="lyrics">
+            <summary>Ver letra</summary>
+            <div class="lyrics-text">Uma bomba explodiu de madrugada
+Estraçalhou meu coração
+Hoje eu ando em lugares diferentes
+Afastando as lembranças da dor que eu senti
+
+Esse foi meu jeito de esquecer
+A desilusão de um amor
+Hoje sem querer eu descobri
+Que você se superou
+
+Fez um face falso pra bisbilhotar
+O que estou postando no meu celular
+Sei que se arrepende do que você fez
+Destruir um amor para seguir um ex
+Insensatez
+
+Esse foi meu jeito de esquecer
+A desilusão de um amor
+Hoje sem querer eu descobri
+Que você se superou
+
+Fez um face falso pra bisbilhotar
+O que estou postando no meu celular
+Sei que se arrepende do que você fez
+Destruir um amor para seguir um ex
+Insensatez
+
+Insensatez...</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="song-card" id="quem-ama-cuida">
+        <div class="song-cover">
+          <img src="capas/06-quem-ama-cuida.jpg" alt="Capa de Quem Ama Cuida" loading="lazy">
+          <span class="song-tag tag-forro">Forró</span>
+        </div>
+        <div class="song-body">
+          <h3 class="song-title">Quem Ama Cuida</h3>
+          <p class="song-style">forró, voz masculina</p>
+          <div class="player-wrap">
+            <iframe src="https://suno.com/embed/60c16018-f7be-4d34-88e2-3d715f146e83" loading="lazy" allow="autoplay"></iframe>
+          </div>
+          <details class="lyrics">
+            <summary>Ver letra</summary>
+            <div class="lyrics-text">Quem ama cuida, amor, ou, ou, ou, ô
+Cê cuida de mim
+Quem ama cuida, amor, ou, ou, ou, ô
+Cê cuida de mim
+
+Não sei se é medo da despedida
+Ou se não quer me ver sofrer
+Esquece isso, querida, bote um xote pra nos ter
+Amor eterno na minha vida
+Sou eu e você no São João
+Você me chama de Vida, eu te chamo Paixão
+
+Quem ama cuida, amor, ou, ou, ou, ô
+Cê cuida de mim
+Quem ama cuida, amor, ou, ou, ou, ô
+Cê cuida de mim
+
+Assim eu fico com você a noite toda
+Cê beijando minha boca, me enchendo de prazer
+Fico grudado bem juntinho do carinho
+Você diz "meu Dequinho, só você me dá prazer"
+
+Isso sim é que é viver, ê, ê, ê, ê
+Eu sanfonado em você
+
+Quem ama cuida, amor, ou, ou, ou, ô
+Cê cuida de mim
+Quem ama cuida, amor, ou, ou, ou, ô
+Cê cuida de mim
+
+Eu sanfonado em você</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="song-card" id="poucas-palavras">
+        <div class="song-cover">
+          <img src="capas/07-poucas-palavras.jpg" alt="Capa de Poucas Palavras" loading="lazy">
+          <span class="song-tag tag-sertanejo">Sertanejo</span>
+        </div>
+        <div class="song-body">
+          <h3 class="song-title">Poucas Palavras</h3>
+          <p class="song-style">sertanejo, voz masculina</p>
+          <div class="player-wrap">
+            <iframe src="https://suno.com/embed/fa3d4ed7-1799-49a5-b108-2363b375178b" loading="lazy" allow="autoplay"></iframe>
+          </div>
+          <details class="lyrics">
+            <summary>Ver letra</summary>
+            <div class="lyrics-text">Em poucas palavras eu vou descrever
+O que sente meu peito em amar você
+É mais que demais
+Eu sei que me entende
+É tom sobre tom o amor da gente
+
+Ô, u, ou, você faz da vida um sonho bom
+Você é da vida meu sonho bom
+
+Sei que já te encontrei
+Hoje estamos aqui, amanhã te amarei ainda mais
+Quando Deus quer é assim, Ele que nos criou
+Em cada fase fortalece o nosso amor
+
+Ô, u, ou, você faz da vida um sonho bom
+Você é da vida meu sonho bom
+
+Você é da vida meu sonho bom</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="song-card" id="pecados">
+        <div class="song-cover">
+          <img src="capas/08-pecados.jpg" alt="Capa de Pecados" loading="lazy">
+          <span class="song-tag tag-sertanejo">Sertanejo</span>
+        </div>
+        <div class="song-body">
+          <h3 class="song-title">Pecados</h3>
+          <p class="song-style">sertanejo, voz masculina</p>
+          <div class="player-wrap">
+            <iframe src="https://suno.com/embed/e4150f58-9fe3-4223-9466-ad10f5674564" loading="lazy" allow="autoplay"></iframe>
+          </div>
+          <details class="lyrics">
+            <summary>Ver letra</summary>
+            <div class="lyrics-text">Se for amar assim
+É melhor eu te esquecer
+Não faz nenhum sentido eu ir pra cama sem você
+
+Então volte, amor
+Volte logo pros meus braços
+Eu esqueço seus defeitos
+Cê esquece os meus pecados
+
+Se for amar assim
+É melhor eu te esquecer
+Não faz nenhum sentido eu ir pra cama sem você
+
+Então volte, amor
+Volte logo pros meus braços
+Eu esqueço seus defeitos
+Cê esquece os meus pecados
+
+Então volte, amor</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="song-card" id="clarinha">
+        <div class="song-cover">
+          <img src="capas/09-clarinha.jpg" alt="Capa de Clarinha" loading="lazy">
+          <span class="song-tag tag-forro">Forró</span>
+        </div>
+        <div class="song-body">
+          <h3 class="song-title">Clarinha</h3>
+          <p class="song-style">forró, voz masculina</p>
+          <div class="player-wrap">
+            <iframe src="https://suno.com/embed/467822ed-8174-4607-b8ee-6fd006aa6202" loading="lazy" allow="autoplay"></iframe>
+          </div>
+          <details class="lyrics">
+            <summary>Ver letra</summary>
+            <div class="lyrics-text">Quando o sol nasce aqui já nasce triste
+Ele não tem o calor do meu sertão
+Ele não conhece a Clarinha
+Desconhece o clarão de um balão
+
+Aí, aí, aí, vontade de tocar minha sanfona
+Fazer um xote perto dela
+Para ver minha Clarinha dançar
+Aí, aí, aí, vontade de tocar minha sanfona
+Fazer um xote perto dela
+E ver minha Clarinha raiar
+
+Deu saudade no meu peito, saudade no meu peito
+Deu saudade no meu peito, saudade no meu peito
+Deu saudade no meu peito, saudade no meu peito
+
+Ô, minha Clarinha, logo logo dou um jeito
+Ô, minha Clarinha, logo logo dou um jeito
+
+Ô, minha Clarinha, logo logo dou um jeito</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="song-card" id="sabia">
+        <div class="song-cover">
+          <img src="capas/10-sabia.jpg" alt="Capa de Sabiá" loading="lazy">
+          <span class="song-tag tag-raiz">Sertanejo raiz</span>
+        </div>
+        <div class="song-body">
+          <h3 class="song-title">Sabiá</h3>
+          <p class="song-style">sertanejo raiz, dupla de vozes, sanfona</p>
+          <div class="player-wrap">
+            <iframe src="https://suno.com/embed/aeafc011-145d-42bc-a78e-c80596e17ef2" loading="lazy" allow="autoplay"></iframe>
+          </div>
+          <details class="lyrics">
+            <summary>Ver letra</summary>
+            <div class="lyrics-text">O dia amanheceu, a sabiá cantou
+Cheirinho de café fez lembrar o meu amor
+
+A sabiá, cante pra ela, vai
+Cante para ela agora o que eu não posso mais cantar
+A sabiá, que inveja tenho de ti
+Poder cantar pra ela e hoje eu só aqui
+
+O dia entardeceu, a sabiá voltou
+Olhei para a porteira e revi o meu amor
+
+A sabiá cantava bem assim
+Cantava que voltava, que ela voltava para mim
+
+Cantava que voltava, que ela voltava para mim</div>
+          </details>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section sobre">
+    <div class="sobre-box">
+      <h2 style="margin-top:0">Sobre</h2>
+      <p>João Andrade Filho é um artista de sertanejo e forró. Suas composições falam de amor, saudade e da vida no
+      interior — do modão de viola ao xote de arraiá. Todas as letras são autorais.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>João Andrade Filho — todas as músicas são composições autorais.</p>
+  <p><a href="https://suno.com/@joaoandradeshangrila" target="_blank" rel="noopener">Suno</a> · <a href="https://open.spotify.com/intl-pt/artist/2uTUBUVhU0ffDsDrmTxuiB" target="_blank" rel="noopener">Spotify</a></p>
+</footer>
+
+</body>
+</html>
