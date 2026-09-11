@@ -212,6 +212,36 @@
   a{color:var(--gold-bright)}
   img{max-width:100%;display:block}
 
+  /* ---------- BANNER DE LANÇAMENTO ---------- */
+  .launch-banner{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:.5rem 1rem;
+    padding:.75rem 1.25rem;
+    text-align:center;
+    color:var(--cream);
+    background:linear-gradient(90deg, #2a1d0c, #3a2810 50%, #2a1d0c);
+    border-bottom:1px solid rgba(217,164,65,.35);
+    font-size:.92rem;
+  }
+  .launch-banner strong{color:var(--gold-bright); font-weight:600}
+  .launch-countdown{
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    padding:.25rem .7rem;
+    border-radius:999px;
+    color:#1a1208;
+    background:var(--gold);
+    white-space:nowrap;
+  }
+  .launch-countdown:empty{display:none}
+
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
@@ -411,6 +441,26 @@
 </style>
 </head>
 <body>
+
+<div class="launch-banner" role="region" aria-label="Lançamento">
+  <span id="launch-text">🎶 10 composições de João Andrade Filho chegam ao Spotify e às plataformas digitais em <strong>2 de outubro de 2026</strong></span>
+  <span class="launch-countdown" id="launch-countdown"></span>
+</div>
+<script>
+  (function () {
+    var launch = new Date('2026-10-02T00:00:00-03:00');
+    var days = Math.ceil((launch - new Date()) / 86400000);
+    var badge = document.getElementById('launch-countdown');
+    if (days > 1) {
+      badge.textContent = 'Faltam ' + days + ' dias';
+    } else if (days === 1) {
+      badge.textContent = 'Falta 1 dia';
+    } else {
+      document.getElementById('launch-text').innerHTML =
+        '🎶 As composições de João Andrade Filho <strong>já estão disponíveis</strong> no Spotify e nas plataformas digitais';
+    }
+  })();
+</script>
 
 <header class="hero">
   <div class="hero-content">
