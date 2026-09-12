@@ -379,6 +379,16 @@
   .player-wrap iframe{width:100%; height:150px; display:block; border:0}
 
   details.lyrics{font-size:.88rem}
+  .song-link{
+    display:inline-block;
+    margin-top:.65rem;
+    font-size:.82rem;
+    font-weight:600;
+    color:var(--gold-bright);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .song-link:hover{border-bottom-color:var(--gold)}
   details.lyrics summary{
     cursor:pointer;
     color:var(--gold-bright);
@@ -514,7 +524,7 @@
         <div class="song-body">
           <h3 class="song-title">Feiticeira</h3>
           <p class="song-style">sertanejo, voz masculina</p>
-          <div class="player-wrap">
+          <div class="player-wrap" data-faixa="feiticeira">
             <iframe src="https://suno.com/embed/9a2dd2ae-bf59-4e67-a14e-2407275cdb09" loading="lazy" allow="autoplay"></iframe>
           </div>
           <details class="lyrics">
@@ -542,6 +552,7 @@ A danada da mulher me tirou da bagaceira
 É feiticeira...
 Me tirou da bagaceira</div>
           </details>
+          <a class="song-link" href="/musicas/feiticeira.html">Página da letra &rarr;</a>
         </div>
       </article>
 
@@ -553,7 +564,7 @@ Me tirou da bagaceira</div>
         <div class="song-body">
           <h3 class="song-title">Fantasia</h3>
           <p class="song-style">sertanejo, voz masculina</p>
-          <div class="player-wrap">
+          <div class="player-wrap" data-faixa="fantasia">
             <iframe src="https://suno.com/embed/86ddc102-271f-4aa4-81a3-5f5f7a3475f2" loading="lazy" allow="autoplay"></iframe>
           </div>
           <details class="lyrics">
@@ -581,6 +592,7 @@ Você foi feito pra mim
 
 I love you...</div>
           </details>
+          <a class="song-link" href="/musicas/fantasia.html">Página da letra &rarr;</a>
         </div>
       </article>
 
@@ -592,7 +604,7 @@ I love you...</div>
         <div class="song-body">
           <h3 class="song-title">Minha Querida</h3>
           <p class="song-style">sertanejo, voz masculina</p>
-          <div class="player-wrap">
+          <div class="player-wrap" data-faixa="minha-querida">
             <iframe src="https://suno.com/embed/9d1a2664-b58d-4c29-b851-dad8e2028005" loading="lazy" allow="autoplay"></iframe>
           </div>
           <details class="lyrics">
@@ -620,6 +632,7 @@ Tomar mais uma para lhe chamar de amor
 Tomar mais uma para lhe chamar de amor
 Tomar mais uma para lhe chamar de amor</div>
           </details>
+          <a class="song-link" href="/musicas/minha-querida.html">Página da letra &rarr;</a>
         </div>
       </article>
 
@@ -631,7 +644,7 @@ Tomar mais uma para lhe chamar de amor</div>
         <div class="song-body">
           <h3 class="song-title">Esse Forró Tá Bom</h3>
           <p class="song-style">forró, voz masculina</p>
-          <div class="player-wrap">
+          <div class="player-wrap" data-faixa="esse-forro-ta-bom">
             <iframe src="https://suno.com/embed/6f941a9e-ddae-495a-8e7d-77cf9993c3fa" loading="lazy" allow="autoplay"></iframe>
           </div>
           <details class="lyrics">
@@ -665,6 +678,7 @@ Esse forró tá bom, esse forró tá bom
 
 Esse forró tá bom, esse forró tá bom</div>
           </details>
+          <a class="song-link" href="/musicas/esse-forro-ta-bom.html">Página da letra &rarr;</a>
         </div>
       </article>
 
@@ -676,7 +690,7 @@ Esse forró tá bom, esse forró tá bom</div>
         <div class="song-body">
           <h3 class="song-title">Insensatez</h3>
           <p class="song-style">sertanejo, voz masculina</p>
-          <div class="player-wrap">
+          <div class="player-wrap" data-faixa="insensatez">
             <iframe src="https://suno.com/embed/42ddecbc-a8d2-46f4-8c7b-b39e40105560" loading="lazy" allow="autoplay"></iframe>
           </div>
           <details class="lyrics">
@@ -710,6 +724,7 @@ Insensatez
 
 Insensatez...</div>
           </details>
+          <a class="song-link" href="/musicas/insensatez.html">Página da letra &rarr;</a>
         </div>
       </article>
 
@@ -721,7 +736,7 @@ Insensatez...</div>
         <div class="song-body">
           <h3 class="song-title">Quem Ama Cuida</h3>
           <p class="song-style">forró, voz masculina</p>
-          <div class="player-wrap">
+          <div class="player-wrap" data-faixa="quem-ama-cuida">
             <iframe src="https://suno.com/embed/60c16018-f7be-4d34-88e2-3d715f146e83" loading="lazy" allow="autoplay"></iframe>
           </div>
           <details class="lyrics">
@@ -758,6 +773,7 @@ Cê cuida de mim
 
 Eu sanfonado em você</div>
           </details>
+          <a class="song-link" href="/musicas/quem-ama-cuida.html">Página da letra &rarr;</a>
         </div>
       </article>
 
@@ -769,7 +785,7 @@ Eu sanfonado em você</div>
         <div class="song-body">
           <h3 class="song-title">Poucas Palavras</h3>
           <p class="song-style">sertanejo, voz masculina</p>
-          <div class="player-wrap">
+          <div class="player-wrap" data-faixa="poucas-palavras">
             <iframe src="https://suno.com/embed/fa3d4ed7-1799-49a5-b108-2363b375178b" loading="lazy" allow="autoplay"></iframe>
           </div>
           <details class="lyrics">
@@ -793,6 +809,7 @@ Você é da vida meu sonho bom
 
 Você é da vida meu sonho bom</div>
           </details>
+          <a class="song-link" href="/musicas/poucas-palavras.html">Página da letra &rarr;</a>
         </div>
       </article>
 
@@ -804,7 +821,7 @@ Você é da vida meu sonho bom</div>
         <div class="song-body">
           <h3 class="song-title">Pecados</h3>
           <p class="song-style">sertanejo, voz masculina</p>
-          <div class="player-wrap">
+          <div class="player-wrap" data-faixa="pecados">
             <iframe src="https://suno.com/embed/e4150f58-9fe3-4223-9466-ad10f5674564" loading="lazy" allow="autoplay"></iframe>
           </div>
           <details class="lyrics">
@@ -829,6 +846,7 @@ Cê esquece os meus pecados
 
 Então volte, amor</div>
           </details>
+          <a class="song-link" href="/musicas/pecados.html">Página da letra &rarr;</a>
         </div>
       </article>
 
@@ -840,7 +858,7 @@ Então volte, amor</div>
         <div class="song-body">
           <h3 class="song-title">Clarinha</h3>
           <p class="song-style">forró, voz masculina</p>
-          <div class="player-wrap">
+          <div class="player-wrap" data-faixa="clarinha">
             <iframe src="https://suno.com/embed/467822ed-8174-4607-b8ee-6fd006aa6202" loading="lazy" allow="autoplay"></iframe>
           </div>
           <details class="lyrics">
@@ -866,6 +884,7 @@ Deu saudade no meu peito, saudade no meu peito
 
 Ô, minha Clarinha, logo logo dou um jeito</div>
           </details>
+          <a class="song-link" href="/musicas/clarinha.html">Página da letra &rarr;</a>
         </div>
       </article>
 
@@ -877,7 +896,7 @@ Deu saudade no meu peito, saudade no meu peito
         <div class="song-body">
           <h3 class="song-title">Sabiá</h3>
           <p class="song-style">sertanejo raiz, dupla de vozes, sanfona</p>
-          <div class="player-wrap">
+          <div class="player-wrap" data-faixa="sabia">
             <iframe src="https://suno.com/embed/aeafc011-145d-42bc-a78e-c80596e17ef2" loading="lazy" allow="autoplay"></iframe>
           </div>
           <details class="lyrics">
@@ -898,6 +917,7 @@ Cantava que voltava, que ela voltava para mim
 
 Cantava que voltava, que ela voltava para mim</div>
           </details>
+          <a class="song-link" href="/musicas/sabia.html">Página da letra &rarr;</a>
         </div>
       </article>
 
@@ -941,5 +961,6 @@ Cantava que voltava, que ela voltava para mim</div>
   <p><a href="https://suno.com/@joaoandradeshangrila" target="_blank" rel="noopener">Suno</a> · <a href="https://open.spotify.com/intl-pt/artist/2uTUBUVhU0ffDsDrmTxuiB" target="_blank" rel="noopener">Spotify</a></p>
 </footer>
 
+<script src="/player.js" defer></script>
 </body>
 </html>

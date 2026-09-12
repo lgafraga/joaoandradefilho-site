@@ -7,16 +7,18 @@
 
 ## Músicas
 
-- Feiticeira (sertanejo)
-- Fantasia (sertanejo)
-- Minha Querida (sertanejo)
-- Esse Forró Tá Bom (forró)
-- Insensatez (sertanejo)
-- Quem Ama Cuida (forró)
-- Poucas Palavras (sertanejo)
-- Pecados (sertanejo)
-- Clarinha (forró)
-- Sabiá (sertanejo raiz)
+Cada música tem uma página própria com a letra completa:
+
+- [Feiticeira](https://joaoandradefilho.com.br/musicas/feiticeira.html) (sertanejo) — letra completa
+- [Fantasia](https://joaoandradefilho.com.br/musicas/fantasia.html) (sertanejo) — letra completa
+- [Minha Querida](https://joaoandradefilho.com.br/musicas/minha-querida.html) (sertanejo) — letra completa
+- [Esse Forró Tá Bom](https://joaoandradefilho.com.br/musicas/esse-forro-ta-bom.html) (forró) — letra completa
+- [Insensatez](https://joaoandradefilho.com.br/musicas/insensatez.html) (sertanejo) — letra completa
+- [Quem Ama Cuida](https://joaoandradefilho.com.br/musicas/quem-ama-cuida.html) (forró) — letra completa
+- [Poucas Palavras](https://joaoandradefilho.com.br/musicas/poucas-palavras.html) (sertanejo) — letra completa
+- [Pecados](https://joaoandradefilho.com.br/musicas/pecados.html) (sertanejo) — letra completa
+- [Clarinha](https://joaoandradefilho.com.br/musicas/clarinha.html) (forró) — letra completa
+- [Sabiá](https://joaoandradefilho.com.br/musicas/sabia.html) (sertanejo raiz) — letra completa
 
 ## Links
 
